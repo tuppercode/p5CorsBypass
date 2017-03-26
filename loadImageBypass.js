@@ -18,7 +18,7 @@ function loadImageErrorOverride(errEvt) {
 }
 
 function loadImageBypass(URL) {
- 
+  var img;
   return loadImage(URL,
             function (pic) { print(img = pic), redraw(); },
             loadImageErrorOverride);
