@@ -23,7 +23,4 @@ function loadImageBypass(URL) {
             function (pic) { print(img = pic), redraw(); },
             loadImageErrorOverride);
 }
- 
-loadImage = function(URL) {
-  return loadImageBypass(URL);
-}
+
