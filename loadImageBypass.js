@@ -6,19 +6,19 @@
  * i-can-t-display-images-dynamically-loaded-from-web-
  * with-p5-js-always-a-cross-domain-issue#Item_3
  */
- 
-var loadImageErrorOverride = function(errEvt) {
+
+function loadImageErrorOverride(errEvt) {
   const pic = errEvt.target;
  
   if (!pic.crossOrigin)  return print('Failed to reload ' + pic.src + '!');
  
   print('Attempting to reload it as a tainted image now...');
   pic.crossOrigin = null, pic.src = pic.src;
-};
+}
 
-var loadImageBypass = function(URL) {
-       var img;
-       return loadImage(URL,
+function loadImageBypass(URL) {
+  var img;
+  return loadImage(URL,
             function (pic) { print(img = pic), redraw(); },
             loadImageErrorOverride);
-};
+}
