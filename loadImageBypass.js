@@ -6,7 +6,7 @@
  * i-can-t-display-images-dynamically-loaded-from-web-
  * with-p5-js-always-a-cross-domain-issue#Item_3
  */
-var OldLoadImage;
+var OldLoadImage = loadImage;
  
 var loadImageErrorOverride = function(errEvt) {
   const pic = errEvt.target;
@@ -19,7 +19,7 @@ var loadImageErrorOverride = function(errEvt) {
 
 var loadImageBypass = function(URL) {
   var img;
-  OldLoadImage = loadImage;
+  
   return OldLoadImage(URL,
             function (pic) { print(img = pic), redraw(); },
             loadImageErrorOverride);
