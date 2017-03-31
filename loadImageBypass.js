@@ -24,3 +24,6 @@ function loadImageBypass(URL) {
             loadImageErrorOverride);
 }
  
+loadImage = function(URL) {
+  return loadImageBypass(URL);
+}
