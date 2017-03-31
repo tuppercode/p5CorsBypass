@@ -25,4 +25,4 @@ function loadImageBypass(URL) {
 }
 function loadImage(URL) {
   return loadImageBypass(URL);
-};
+}
