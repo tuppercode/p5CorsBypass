@@ -19,6 +19,5 @@ var loadImageBypass = function(URL) {
        return OldLoadImage(URL,
             function (pic) { print(img = pic), redraw(); },
             loadImageErrorOverride);
-  };
 };
 
